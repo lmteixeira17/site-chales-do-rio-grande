@@ -1,0 +1,10 @@
+version: '3'
+services:
+  site-chales:
+    container_name: site_chales
+    build: .
+    restart: always
+    ports:
+      - "3001:3000" # Mapeando porta 3001 do servidor para 3000 do container
+    environment:
+      - NODE_ENV=production
