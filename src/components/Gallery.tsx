@@ -3,6 +3,7 @@
 import Image from "next/image";
 import { useState } from "react";
 import { X } from "lucide-react";
+import { trackGalleryView, trackGalleryInteraction } from "@/lib/analytics-utils";
 
 const PHOTOS = [
     "/images/gallery/IMG_2984.jpg",
@@ -56,7 +57,11 @@ export function Gallery() {
                         <div
                             key={idx}
                             className="relative overflow-hidden rounded-xl cursor-pointer group break-inside-avoid"
-                            onClick={() => setSelectedImage(src)}
+                            onClick={() => {
+                                setSelectedImage(src);
+                                trackGalleryView(idx, src);
+                                trackGalleryInteraction('open');
+                            }}
                         >
                             <img
                                 src={src}
@@ -72,7 +77,10 @@ export function Gallery() {
 
             {/* Lightbox Modal */}
             {selectedImage && (
-                <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in" onClick={() => setSelectedImage(null)}>
+                <div className="fixed inset-0 z-50 bg-black/90 flex items-center justify-center p-4 animate-fade-in" onClick={() => {
+                    setSelectedImage(null);
+                    trackGalleryInteraction('close');
+                }}>
                     <button
                         className="absolute top-4 right-4 text-white p-2 hover:bg-white/10 rounded-full"
                         onClick={() => setSelectedImage(null)}

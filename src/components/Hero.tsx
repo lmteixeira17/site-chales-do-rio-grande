@@ -1,6 +1,9 @@
+"use client";
+
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
 import Image from "next/image";
+import { trackCTAClick } from "@/lib/analytics-utils";
 
 export function Hero() {
     return (
@@ -28,13 +31,19 @@ export function Hero() {
                 </p>
 
                 <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
-                    <a href="#disponibilidade">
+                    <a
+                        href="#disponibilidade"
+                        onClick={() => trackCTAClick('Verificar Disponibilidade', 'hero')}
+                    >
                         <Button size="xl" variant="cta" className="w-full sm:w-auto">
                             Verificar Disponibilidade
                             <ArrowRight className="ml-2 w-5 h-5" />
                         </Button>
                     </a>
-                    <a href="#galeria">
+                    <a
+                        href="#galeria"
+                        onClick={() => trackCTAClick('Conhecer o Rancho', 'hero')}
+                    >
                         <Button size="xl" variant="outline" className="w-full sm:w-auto bg-white/10 text-white border-white/40 hover:bg-white hover:text-primary">
                             Conhecer o Rancho
                         </Button>
