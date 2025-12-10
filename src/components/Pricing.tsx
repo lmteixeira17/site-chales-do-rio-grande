@@ -1,3 +1,5 @@
+"use client";
+
 import { PHONE_NUMBER } from '@/lib/constants';
 import { trackCTAClick } from '@/lib/analytics-utils';
 import { Check, Calendar, ArrowRight } from 'lucide-react';
@@ -25,8 +27,8 @@ const PricingCard = ({
     return (
         <div
             className={`relative p-8 rounded-2xl border ${isPopular
-                    ? 'border-brown-600 bg-brown-50 shadow-xl scale-105 z-10'
-                    : 'border-stone-200 bg-white shadow-lg'
+                ? 'border-brown-600 bg-brown-50 shadow-xl scale-105 z-10'
+                : 'border-stone-200 bg-white shadow-lg'
                 } flex flex-col animate-fade-in-up ${delay}`}
         >
             {isPopular && (
@@ -60,8 +62,8 @@ const PricingCard = ({
                 rel="noopener noreferrer"
                 onClick={() => trackCTAClick(`Reservar ${title}`, 'pricing')}
                 className={`w-full py-3 px-6 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${isPopular
-                        ? 'bg-brown-600 text-white hover:bg-brown-700 shadow-md'
-                        : 'bg-stone-100 text-stone-800 hover:bg-stone-200'
+                    ? 'bg-brown-600 text-white hover:bg-brown-700 shadow-md'
+                    : 'bg-stone-100 text-stone-800 hover:bg-stone-200'
                     }`}
             >
                 Reservar Agora
