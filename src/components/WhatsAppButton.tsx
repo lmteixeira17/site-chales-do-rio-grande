@@ -4,8 +4,7 @@ import { MessageCircle } from "lucide-react";
 import { useEffect, useState } from "react";
 import { cn } from "@/lib/utils";
 import { trackWhatsAppClick } from "@/lib/analytics-utils";
-
-const PHONE_NUMBER = "5516981190106"; // User provided number
+import { PHONE_NUMBER } from "@/lib/constants";
 
 export function WhatsAppButton() {
     const [visible, setVisible] = useState(false);

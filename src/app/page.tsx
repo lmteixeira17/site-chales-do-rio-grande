@@ -1,7 +1,8 @@
 import { Header } from "@/components/Header";
 import { Hero } from "@/components/Hero";
 import { Amenities } from "@/components/Amenities";
-import { Availability } from "@/components/Availability"; // Import newly created component
+import { Pricing } from "@/components/Pricing";
+import { Availability } from "@/components/Availability";
 import { Gallery } from "@/components/Gallery";
 import { Location } from "@/components/Location";
 import { Testimonials } from "@/components/Testimonials";
@@ -14,7 +15,8 @@ export default function Home() {
       <Header />
       <Hero />
       <Amenities />
-      <Availability /> {/* Add component here */}
+      <Pricing />
+      <Availability />
       <Gallery />
       <Testimonials />
       <Location />

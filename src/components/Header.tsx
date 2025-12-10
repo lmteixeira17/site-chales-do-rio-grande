@@ -11,6 +11,7 @@ const NAV_ITEMS = [
     { label: "O Rancho", href: "#sobre" },
     { label: "Galeria", href: "#galeria" },
     { label: "Comodidades", href: "#comodidades" },
+    { label: "Investimento", href: "#investimento" },
     { label: "Localização", href: "#localizacao" },
 ];
 
