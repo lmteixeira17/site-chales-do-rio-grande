@@ -27,12 +27,12 @@ const PricingCard = ({
     return (
         <div
             className={`relative p-8 rounded-2xl border ${isPopular
-                ? 'border-brown-600 bg-brown-50 shadow-xl scale-105 z-10'
+                ? 'border-stone-600 bg-stone-100 shadow-xl scale-105 z-10'
                 : 'border-stone-200 bg-white shadow-lg'
                 } flex flex-col animate-fade-in-up ${delay}`}
         >
             {isPopular && (
-                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-brown-600 text-white px-4 py-1 rounded-full text-sm font-medium">
+                <div className="absolute -top-4 left-1/2 -translate-x-1/2 bg-amber-500 text-stone-950 px-4 py-1 rounded-full text-sm font-bold shadow-sm">
                     Mais Procurado
                 </div>
             )}
@@ -42,7 +42,7 @@ const PricingCard = ({
                     {title}
                 </h3>
                 <div className="flex items-baseline gap-1">
-                    <span className="text-3xl font-bold text-brown-600">{price}</span>
+                    <span className="text-3xl font-bold text-stone-800">{price}</span>
                     {period && <span className="text-stone-500 text-sm">/{period}</span>}
                 </div>
             </div>
@@ -62,7 +62,7 @@ const PricingCard = ({
                 rel="noopener noreferrer"
                 onClick={() => trackCTAClick(`Reservar ${title}`, 'pricing')}
                 className={`w-full py-3 px-6 rounded-lg font-medium transition-all flex items-center justify-center gap-2 ${isPopular
-                    ? 'bg-brown-600 text-white hover:bg-brown-700 shadow-md'
+                    ? 'bg-stone-800 text-white hover:bg-stone-900 shadow-md'
                     : 'bg-stone-100 text-stone-800 hover:bg-stone-200'
                     }`}
             >
@@ -78,7 +78,7 @@ export const Pricing = () => {
         <section id="investimento" className="py-20 bg-stone-50">
             <div className="container mx-auto px-4">
                 <div className="text-center max-w-3xl mx-auto mb-16 animate-fade-in">
-                    <span className="text-brown-600 font-medium tracking-wider uppercase text-sm">
+                    <span className="text-stone-600 font-medium tracking-wider uppercase text-sm">
                         Investimento
                     </span>
                     <h2 className="text-3xl md:text-4xl font-serif font-bold text-stone-800 mt-2 mb-4">
